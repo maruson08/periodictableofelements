@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Periodic table of Elements</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/simple.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <style>
+            table{
+                width: 80%;
+                margin: 10%;
+                margin-top: 0;
+            }
+            td{
+                height: 80px;
+                border: 1px solid white;
+                width: 5%;
+                height: 5em;
+            }
+            .reactiveNonMetals{
+                background-color: rgb(226,238,255);
+            }
+            .alkaliMetals{
+                background-color: rgb(216,248,255);
+            }
+            .metalloids{
+                background-color: rgb(254,247,224);
+            }
+            .post-transitionMetals{
+                background-color: rgb(214,249,232);
+            }
+            .nobleGases{
+                background-color: rgb(255,231,235);
+            }
+            .undefined{
+                background-color: rgb(231,231,234);
+            }
+            .alkalineEarthMetals{
+                background-color: rgb(255,231,231);
+            }
+            .transitionMetals{
+                background-color: rgb(243,232,253);
+            }
+            .tabela-periodica-undefined{
+                visibility: hidden;
+            }
+            .tabela-periodica-actinoid, .tabela-periodica-lanthanoid{
+                display:none;
+            }
+            #tabela-periodica-89, #tabela-periodica-57{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="text-center">
+            <tr class="text-black">
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td class="text-black">1</td>
+                <td class="reactiveNonMetals">H</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="nobleGases">He</td>
+            </tr>
+            <tr>
+                <td class="text-black">2</td>
+                <td class="alkaliMetals">Li</td>
+                <td class="alkalineEarthMetals">Be</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="metalloids">B</td>
+                <td class="reactiveNonMetals">C</td>
+                <td class="reactiveNonMetals">N</td>
+                <td class="reactiveNonMetals">O</td>
+                <td class="reactiveNonMetals">F</td>
+                <td class="nobleGases">Ne</td>
+            </tr>
+            <tr>
+                <td class="text-black">3</td>
+                <td class="alkaliMetals">Na</td>
+                <td class="alkalineEarthMetals">Mg</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="post-transitionMetals">Al</td>
+                <td class="metalloids">Si</td>
+                <td class="reactiveNonMetals">P</td>
+                <td class="reactiveNonMetals">S</td>
+                <td class="reactiveNonMetals">Cl</td>
+                <td class="nobleGases">Ar</td>
+            </tr>
+            <tr>
+                <td class="text-black">4</td>
+                <td class="alkaliMetals">K</td>
+                <td class="alkalineEarthMetals">Ca</td>
+                <td class="transitionMetals">Sc</td>
+                <td class="transitionMetals">Ti</td>
+                <td class="transitionMetals">V</td>
+                <td class="transitionMetals">Cr</td>
+                <td class="transitionMetals">Mn</td>
+                <td class="transitionMetals">Fe</td>
+                <td class="transitionMetals">Co</td>
+                <td class="transitionMetals">Ni</td>
+                <td class="transitionMetals">Cu</td>
+                <td class="transitionMetals">Zn</td>
+                <td class="post-transitionMetals">Ga</td>
+                <td class="metalloids">Ge</td>
+                <td class="metalloids">As</td>
+                <td class="reactiveNonMetals">Se</td>
+                <td class="reactiveNonMetals">Br</td>
+                <td class="nobleGases">Kr</td>
+            </tr>
+            <tr>
+                <td class="text-black">5</td>
+                <td class="alkaliMetals">Rb</td>
+                <td class="alkalineEarthMetals">Sr</td>
+                <td class="transitionMetals">Y</td>
+                <td class="transitionMetals">Zr</td>
+                <td class="transitionMetals">Nb</td>
+                <td class="transitionMetals">Mo</td>
+                <td class="transitionMetals">Tc</td>
+                <td class="transitionMetals">Ru</td>
+                <td class="transitionMetals">Rh</td>
+                <td class="transitionMetals">Pd</td>
+                <td class="transitionMetals">Ag</td>
+                <td class="transitionMetals">Cd</td>
+                <td class="post-transitionMetals">In</td>
+                <td class="post-transitionMetals">Sn</td>
+                <td class="metalloids">Sb</td>
+                <td class="metalloids">Te</td>
+                <td class="reactiveNonMetals">I</td>
+                <td class="nobleGases">Xe</td>
+            </tr>
+            <tr>
+                <td class="text-black">6</td>
+                <td class="alkaliMetals">Cs</td>
+                <td class="alkalineEarthMetals">Ba</td>
+                <td>La</td>
+                <td class="transitionMetals">Hf</td>
+                <td class="transitionMetals">Ta</td>
+                <td class="transitionMetals">W</td>
+                <td class="transitionMetals">Re</td>
+                <td class="transitionMetals">Os</td>
+                <td class="transitionMetals">Ir</td>
+                <td class="transitionMetals">Pt</td>
+                <td class="transitionMetals">Au</td>
+                <td class="transitionMetals">Hg</td>
+                <td class="post-transitionMetals">Tl</td>
+                <td class="post-transitionMetals">Pb</td>
+                <td class="post-transitionMetals">Bi</td>
+                <td class="post-transitionMetals">Po</td>
+                <td class="post-transitionMetals">At</td>
+                <td class="nobleGases">Rn</td>
+            </tr>
+            <tr>
+                <td class="text-black">7</td>
+                <td class="alkaliMetals">Fr</td>
+                <td class="alkalineEarthMetals">Ra</td>
+                <td>Ac</td>
+                <td class="transitionMetals">Rf</td>
+                <td class="transitionMetals">Db</td>
+                <td class="transitionMetals">Sg</td>
+                <td class="transitionMetals">Bh</td>
+                <td class="transitionMetals">Hs</td>
+                <td class="undefined">Mt</td>
+                <td class="undefined">Ds</td>
+                <td class="undefined">Rg</td>
+                <td class="undefined">Cn</td>
+                <td class="undefined">Nh</td>
+                <td class="undefined">Fl</td>
+                <td class="undefined">Mc</td>
+                <td class="undefined">Lv</td>
+                <td class="undefined">Ts</td>
+                <td  class="undefined">Og</td>
+            </tr>
+        </table>
+        https://www.rsc.org/periodic-table/
+        <div style="width:80%;margin:10%;border:2px solid black">정보</div>
+        <script>
+            fetch("./table.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    let PeriodicContents = "";
+                    data.forEach(element => {
+                        PeriodicContents = PeriodicContents+`
+                            <div style='border:1px solid black;width:100%;' id="tabela-periodica-${element.atomicNumber}" class="tabela-periodica-${element.groupBlock}">
+                                <h3>${element.atomicNumber}</h3>
+                                <h2 class="symbol_undefined">${element.symbol}</h2>
+                                <h4>${element.name}</h4>
+                                <h5>${element.groupBlock}</h5>
+                            </div>`
+                        console.log(PeriodicContents);
+                        document.querySelector(".tabela-periodica-temp").innerHTML = PeriodicContents;
+
+                    });
+
+                });
+        </script>
+        <div style="display:grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;" class="tabela-periodica-temp">
+            
+        </div>        
+    </body>
+</html>
+
