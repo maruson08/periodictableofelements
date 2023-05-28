@@ -42,19 +42,25 @@
             .transitionMetals{
                 background-color: rgb(243,232,253);
             }
-            .tabela-periodica-undefined{
-                visibility: hidden;
+            .lanthanoid{
+                background-color: rgb(223,243,255);
             }
-            .tabela-periodica-actinoid, .tabela-periodica-lanthanoid{
-                display:none;
+            .actinoid{
+                background-color: #ffe6d4;
             }
             #tabela-periodica-89, #tabela-periodica-57{
                 display: block;
             }
+            .details{
+                display: none;
+            }
+            .details:hover{
+                display:block
+            }
         </style>
     </head>
     <body>
-        <table class="text-center">
+        <table class="text-center" id="main_tbl">
             <tr class="text-black">
                 <td></td>
                 <td>1</td>
@@ -78,7 +84,7 @@
             </tr>
             <tr>
                 <td class="text-black">1</td>
-                <td class="reactiveNonMetals">H</td>
+                <td class="reactiveNonMetals" id="H">H</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -95,11 +101,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="nobleGases">He</td>
+                <td class="nobleGases" id="He">He</td>
             </tr>
             <tr>
                 <td class="text-black">2</td>
-                <td class="alkaliMetals">Li</td>
+                <td class="alkaliMetals" id="Li">Li</td>
                 <td class="alkalineEarthMetals">Be</td>
                 <td></td>
                 <td></td>
@@ -185,7 +191,7 @@
                 <td class="text-black">6</td>
                 <td class="alkaliMetals">Cs</td>
                 <td class="alkalineEarthMetals">Ba</td>
-                <td>La</td>
+                <td class="lanthanoid">La</td>
                 <td class="transitionMetals">Hf</td>
                 <td class="transitionMetals">Ta</td>
                 <td class="transitionMetals">W</td>
@@ -206,7 +212,7 @@
                 <td class="text-black">7</td>
                 <td class="alkaliMetals">Fr</td>
                 <td class="alkalineEarthMetals">Ra</td>
-                <td>Ac</td>
+                <td class="actinoid">Ac</td>
                 <td class="transitionMetals">Rf</td>
                 <td class="transitionMetals">Db</td>
                 <td class="transitionMetals">Sg</td>
@@ -223,32 +229,81 @@
                 <td class="undefined">Ts</td>
                 <td  class="undefined">Og</td>
             </tr>
+            <tr>
+                <td>Lanthanoid</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="lanthanoid">Ce</td>
+                <td class="lanthanoid">Pr</td>
+                <td class="lanthanoid">Nd</td>
+                <td class="lanthanoid">Pm</td>
+                <td class="lanthanoid">Sm</td>
+                <td class="lanthanoid">Eu</td>
+                <td class="lanthanoid">Gd</td>
+                <td class="lanthanoid">Tb</td>
+                <td class="lanthanoid">Dy</td>
+                <td class="lanthanoid">Ho</td>
+                <td class="lanthanoid">Er</td>
+                <td class="lanthanoid">Tm</td>
+                <td class="lanthanoid">Yb</td>
+                <td class="lanthanoid">Lu</td>
+            </tr>
+            <tr>
+                <td>Actinoid</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="actinoid">Th</td>
+                <td class="actinoid">Pa</td>
+                <td class="actinoid">U</td>
+                <td class="actinoid">Np</td>
+                <td class="actinoid">Pu</td>
+                <td class="actinoid">Am</td>
+                <td class="actinoid">Cm</td>
+                <td class="actinoid">Bk</td>
+                <td class="actinoid">Cf</td>
+                <td class="actinoid">Es</td>
+                <td class="actinoid">Fm</td>
+                <td class="actinoid">Md</td>
+                <td class="actinoid">No</td>
+                <td class="actinoid">Lr</td>
+            </tr>
         </table>
-        https://www.rsc.org/periodic-table/
+        
+        <embed src="https://www.rsc.org/periodic-table/" frameborder="0"></embed>
         <div style="width:80%;margin:10%;border:2px solid black">정보</div>
         <script>
+            
+            document.querySelectorAll(`#main_tbl td`).forEach(td=>{
+                console.log(td);
+                td.setAttribute("id", td.innerText);
+            })
+
             fetch("./table.json")
                 .then((response) => response.json())
                 .then((data) => {
                     let PeriodicContents = "";
                     data.forEach(element => {
-                        PeriodicContents = PeriodicContents+`
-                            <div style='border:1px solid black;width:100%;' id="tabela-periodica-${element.atomicNumber}" class="tabela-periodica-${element.groupBlock}">
-                                <h3>${element.atomicNumber}</h3>
-                                <h2 class="symbol_undefined">${element.symbol}</h2>
-                                <h4>${element.name}</h4>
-                                <h5>${element.groupBlock}</h5>
+                                                
+                        PeriodicContents = `
+                            <div style='width:100%;font-size:small;' id="tabela-periodica-${element.atomicNumber}" class="tabela-periodica-${element.groupBlock.replace(/ /,'')}">
+                                <div>${element.atomicNumber}</div>
+                                <div style='font-weight:600'>${element.symbol}</div>
+                                <div class='details'>${element.name}</div>
+                                <div class='details'>${element.groupBlock}</div>
                             </div>`
-                        console.log(PeriodicContents);
-                        document.querySelector(".tabela-periodica-temp").innerHTML = PeriodicContents;
+                        //console.log(PeriodicContents);
+                        let sb = element.symbol;
+                        document.querySelector(`#${sb}`).innerHTML = PeriodicContents;
+                        //document.querySelector(".tabela-periodica-temp").innerHTML = PeriodicContents;
+
 
                     });
 
                 });
-        </script>
-        <div style="display:grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;" class="tabela-periodica-temp">
-            
-        </div>        
+
+        </script>       
     </body>
 </html>
 
